@@ -1,0 +1,32 @@
+@import "tailwindcss";
+
+@theme {
+  --color-background: #121212;
+  --color-primary: #8A2BE2;
+  --color-secondary: #FF4081;
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Space Grotesk", sans-serif;
+  --animate-spin-slow: spin 8s linear infinite;
+}
+
+@layer base {
+  body {
+    @apply bg-background text-white font-sans;
+  }
+}
+
+.neon-glow {
+  box-shadow: 0 0 15px theme('colors.primary'), 0 0 30px theme('colors.primary');
+}
+
+.pink-glow {
+  box-shadow: 0 0 15px theme('colors.secondary'), 0 0 30px theme('colors.secondary');
+}
+
+.neon-glow-text {
+  text-shadow: 0 0 10px theme('colors.primary'), 0 0 20px theme('colors.primary');
+}
+
+.pink-glow-text {
+  text-shadow: 0 0 10px theme('colors.secondary'), 0 0 20px theme('colors.secondary');
+}
