@@ -10,7 +10,6 @@ import {
   Map,
   ShieldCheck,
   Camera, 
-  Upload, 
   Sparkles, 
   Moon, 
   Users, 
@@ -44,21 +43,9 @@ const translations = {
     nav_about: "Sobre la App",
     nav_languages: "Idiomas",
     hero_subtitle: "HAFTEN es la red social definitiva para los amantes de la fiesta. Conecta con gente real, descubre los mejores eventos y haz que cada noche sea legendaria.",
-    hero_change: "Cambiar",
     hero_perfil: "Perfil",
     hero_mapa: "Mapa",
     hero_eventos: "Eventos",
-    ai_title: "HAFTEN AI ANALYZER",
-    ai_subtitle: "Sube una imagen para obtener una descripción detallada y su estilo artístico, optimizada para redibujarla con IA.",
-    ai_drop: "Suelta tu imagen aquí",
-    ai_click: "o haz clic para seleccionar un archivo",
-    ai_analyze: "Analizar Imagen",
-    ai_analyzing: "Analizando Estilo...",
-    ai_another: "Analizar otra imagen",
-    ai_copied: "Copiado",
-    ai_copy: "Copiar",
-    ai_desc_es: "Descripción (Español)",
-    ai_desc_en: "AI Prompt (Inglés)",
     footer_rights: "© 2026 HAFTEN. Todos los derechos reservados. Vive la noche.",
     footer_guidelines: "Normas de la Comunidad",
     footer_terms: "Términos de Uso",
@@ -93,21 +80,9 @@ const translations = {
     nav_about: "About the App",
     nav_languages: "Languages",
     hero_subtitle: "HAFTEN is the ultimate social network for party lovers. Connect with real people, discover the best events, and make every night legendary.",
-    hero_change: "Change",
     hero_perfil: "Profile",
     hero_mapa: "Map",
     hero_eventos: "Events",
-    ai_title: "HAFTEN AI ANALYZER",
-    ai_subtitle: "Upload an image to get a detailed description and its artistic style, optimized for AI redrawing.",
-    ai_drop: "Drop your image here",
-    ai_click: "or click to select a file",
-    ai_analyze: "Analyze Image",
-    ai_analyzing: "Analyzing Style...",
-    ai_another: "Analyze another image",
-    ai_copied: "Copied",
-    ai_copy: "Copy",
-    ai_desc_es: "Description (Spanish)",
-    ai_desc_en: "AI Prompt (English)",
     footer_rights: "© 2026 HAFTEN. All rights reserved. Live the night.",
     footer_guidelines: "Community Guidelines",
     footer_terms: "Terms of Use",
@@ -679,19 +654,6 @@ const Hero = () => {
     { label: t('how_step_3_title') }
   ];
 
-  const handleImageUpload = (index: number, e: React.ChangeEvent<HTMLInputElement>) => {
-    const file = e.target.files?.[0];
-    if (file) {
-      const reader = new FileReader();
-      reader.onload = () => {
-        const newImages = [...mockupImages];
-        newImages[index] = reader.result as string;
-        setMockupImages(newImages);
-      };
-      reader.readAsDataURL(file);
-    }
-  };
-
   const nextSlide = () => {
     setCurrentIndex((prev) => (prev + 1) % mockupImages.length);
   };
@@ -738,18 +700,8 @@ const Hero = () => {
                 animate={{ opacity: 1, x: 0, scale: 1 }}
                 exit={{ opacity: 0, x: -100, scale: 0.9 }}
                 transition={{ duration: 0.5, ease: "circOut" }}
-                className="relative w-64 md:w-80 aspect-[9/19] rounded-[3rem] overflow-hidden border-[8px] border-white/10 shadow-[0_0_80px_rgba(0,0,0,0.6)] bg-zinc-900 transition-all duration-500 group cursor-pointer shadow-primary/20"
-                onClick={() => document.getElementById(`upload-${currentIndex}`)?.click()}
+                className="relative w-64 md:w-80 aspect-[9/19] rounded-[3rem] overflow-hidden border-[8px] border-white/10 shadow-[0_0_80px_rgba(0,0,0,0.6)] bg-zinc-900 transition-all duration-500 group shadow-primary/20"
               >
-                {/* Hidden Input */}
-                <input 
-                  type="file" 
-                  id={`upload-${currentIndex}`} 
-                  className="hidden" 
-                  accept="image/*"
-                  onChange={(e) => handleImageUpload(currentIndex, e)}
-                />
-
                 {/* Phone Notch */}
                 <div className="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-7 bg-black rounded-b-3xl z-30" />
                 
@@ -762,14 +714,6 @@ const Hero = () => {
                 
                 {/* Overlay for depth */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent group-hover:opacity-20 transition-opacity" />
-
-                {/* Upload Icon on Hover */}
-                <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity bg-black/40">
-                  <div className="flex flex-col items-center gap-2">
-                    <Upload className="w-10 h-10 text-white" />
-                    <span className="text-sm font-bold uppercase tracking-widest">{t('hero_change')} {screens[currentIndex].label}</span>
-                  </div>
-                </div>
                 
                 {/* Glow effect */}
                 <div className="absolute inset-0 border-2 border-primary/30 rounded-[3rem] pointer-events-none" />
