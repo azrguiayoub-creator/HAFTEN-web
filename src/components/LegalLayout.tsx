@@ -13,7 +13,10 @@ export default function LegalLayout({ children, title }: { children: React.React
               <ArrowLeft className="w-5 h-5" />
               <span className="font-medium">Volver al Inicio</span>
             </Link>
-            <div className="text-xl font-bold tracking-tighter text-white">HAFTEN</div>
+            <div className="flex items-center gap-2">
+              <img src="/logo.png" alt="Haften Logo" className="w-8 h-8 object-contain rounded-lg" />
+              <div className="text-xl font-bold tracking-tighter text-white">HAFTEN</div>
+            </div>
           </div>
         </div>
       </nav>

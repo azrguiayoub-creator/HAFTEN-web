@@ -257,13 +257,13 @@ Conforme al RGPD y la legislación aplicable, usted tiene derecho a:
 - Solicitar la portabilidad de sus datos en un formato estructurado y de uso común.
 - Oponerse al tratamiento de sus datos en determinadas circunstancias.
 
-Para ejercer estos derechos, contacte a nuestro Delegado de Protección de Datos a través de dpo@haftenhaften.com. Responderemos en un plazo máximo de 30 días hábiles.
+Para ejercer estos derechos, contacte a nuestro Delegado de Protección de Datos a través de contact@haftenhaften.com. Responderemos en un plazo máximo de 30 días hábiles.
 
 ### 16. Solicitudes de Eliminación de Datos
 Usted tiene derecho a solicitar la eliminación completa de sus datos personales:
 - Desde la aplicación: En Ajustes, seleccione "Eliminar cuenta y datos".
 - Si se registró mediante un proveedor externo (Google, Apple, Facebook), puede revocar los permisos desde la configuración de dicho proveedor.
-- Por correo electrónico: Envíe su solicitud a dpo@haftenhaften.com indicando la dirección de correo asociada a su cuenta.
+- Por correo electrónico: Envíe su solicitud a contact@haftenhaften.com indicando la dirección de correo asociada a su cuenta.
 
 Una vez procesada la solicitud, sus datos serán eliminados de forma inmediata, excepto la información necesaria para cumplir con obligaciones legales o proteger intereses legítimos. Este proceso es irreversible.
 
@@ -308,7 +308,7 @@ Nos reservamos el derecho de modificar esta Política de Privacidad en cualquier
 Los cambios entrarán en vigor 30 días después de su publicación, aplicándose únicamente a la información recopilada a partir de dicha fecha. Es su responsabilidad revisar periódicamente esta Política.
 
 ### 22. Delegado de Protección de Datos
-Para cualquier consulta, comentario o solicitud relacionada con esta Política de Privacidad o el tratamiento de sus datos personales, contacte a nuestro Delegado de Protección de Datos en dpo@haftenhaften.com.
+Para cualquier consulta, comentario o solicitud relacionada con esta Política de Privacidad o el tratamiento de sus datos personales, contacte a nuestro Delegado de Protección de Datos en contact@haftenhaften.com.
 
 ### 23. Aceptación
 Al crear una cuenta, utilizar o visitar Haften Haften, usted queda vinculado por esta Política de Privacidad e indica su aceptación continua de los términos aquí establecidos, así como de nuestros Términos de Servicio.
@@ -393,7 +393,7 @@ Le recordamos no compartir datos personales ni ubicaciones exactas con personas 
 Haften Haften es propietaria de todos los derechos de propiedad intelectual sobre la Aplicación, el Sitio Web, el diseño, la marca, los logotipos, el código fuente y todo el contenido original del Servicio.
 No está permitido copiar, modificar, distribuir, vender, alquilar ni crear obras derivadas basadas en el Servicio o cualquiera de sus componentes sin autorización escrita previa de Haften Haften.
 
-Si considera que algún contenido publicado en la Plataforma infringe sus derechos de propiedad intelectual, contáctenos a través de legal@haftenhaften.com proporcionando la información necesaria para investigar y resolver la reclamación.
+Si considera que algún contenido publicado en la Plataforma infringe sus derechos de propiedad intelectual, contáctenos a través de contact@haftenhaften.com proporcionando la información necesaria para investigar y resolver la reclamación.
 
 ### 10. Sistema de Check-in e Invitaciones
 El sistema de Check-in de Haften Haften funciona bajo las siguientes condiciones:
@@ -477,7 +477,7 @@ Su cuenta no es transferible y todos sus derechos sobre su perfil o contenido fi
 No se crea ninguna agencia, sociedad o relación laboral como resultado de este Acuerdo.
 
 ### 22. Contacto
-Para cualquier consulta, comentario o reclamación relacionada con estos Términos de Uso, puede contactarnos a través de legal@haftenhaften.com.
+Para cualquier consulta, comentario o reclamación relacionada con estos Términos de Uso, puede contactarnos a través de contact@haftenhaften.com.
 
 ### 23. Aceptación
 CONFIRMO QUE HE LEÍDO ESTE ACUERDO Y ACEPTO TODAS LAS DISPOSICIONES CONTENIDAS EN EL MISMO.
@@ -523,10 +523,7 @@ const AppStoreIcon = () => (
 );
 
 const HaftenLogo = ({ className = "w-8 h-8" }: { className?: string }) => (
-  <svg viewBox="0 0 100 100" className={cn("text-primary", className)} fill="none" xmlns="http://www.w3.org/2000/svg">
-    <rect width="100" height="100" rx="24" fill="currentColor" fillOpacity="0.1" />
-    <path d="M30 25V75M70 25V75M30 50H70" stroke="currentColor" strokeWidth="12" strokeLinecap="round" />
-  </svg>
+  <img src="/logo.png" alt="Haften Logo" className={cn("object-contain rounded-xl", className)} />
 );
 
 const Navbar = () => {
